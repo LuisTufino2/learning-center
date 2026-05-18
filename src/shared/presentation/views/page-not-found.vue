@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
+import Button from 'primevue/button';
 
 const { t } = useI18n();
 const route = useRoute();
@@ -22,7 +23,7 @@ const goHome = () => {
         {{ t('pageNotFound.message') }}
         <code>{{ route.fullPath }}</code>
       </p>
-      <pv-button :label="buttonLabel" @click="goHome" aria-label="Return to Home" />
+      <Button :label="buttonLabel" @click="goHome" :aria-label="t('pageNotFound.goHome')" />
     </div>
   </div>
 </template>
@@ -42,6 +43,7 @@ const goHome = () => {
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   text-align: center;
+  border-top: 4px solid #7c2d12;
 }
 
 h1 {

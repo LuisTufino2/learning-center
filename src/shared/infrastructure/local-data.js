@@ -1,28 +1,21 @@
-const STORAGE_KEY = 'yt-music-editorial-local-db';
+const STORAGE_KEY = 'tw-square-local-db';
 
 const DEFAULT_DB = {
-  tracks: [
-    { id: 1, name: 'Shape of You', costPerHour: 50, impactInPlayback: 'NONE', defaultAction: 'REPROCESS' },
-    { id: 2, name: 'Blinding Lights', costPerHour: 45, impactInPlayback: 'PARTIAL', defaultAction: 'REPLACE' },
-    { id: 3, name: 'Anti-Hero', costPerHour: 55, impactInPlayback: 'TOTAL', defaultAction: 'REPROCESS' },
-    { id: 4, name: 'As It Was', costPerHour: 48, impactInPlayback: 'NONE', defaultAction: 'REPLACE' },
-    { id: 5, name: 'Heat Waves', costPerHour: 52, impactInPlayback: 'PARTIAL', defaultAction: 'REPROCESS' }
+  cellars: [
+    { id: 1, name: 'Reds Cellar', wineType: 'reds', capacity: 500 },
+    { id: 2, name: 'Whites Cellar', wineType: 'whites', capacity: 400 },
+    { id: 3, name: 'Sparkling Cellar', wineType: 'sparkling', capacity: 300 },
+    { id: 4, name: 'Rosé Cellar', wineType: 'rose', capacity: 250 },
+    { id: 5, name: 'Dessert Cellar', wineType: 'dessert', capacity: 200 },
+    { id: 6, name: 'Port Cellar', wineType: 'port', capacity: 180 }
   ],
-  editors: [
-    { id: 1, trackId: 1, editorRole: 'METADATA_REVIEWER', registeredAt: '2026-05-15T08:00:00Z', status: 'AVAILABLE' },
-    { id: 2, trackId: 2, editorRole: 'SYNC_SPECIALIST', registeredAt: '2026-05-14T10:30:00Z', status: 'AVAILABLE' },
-    { id: 3, trackId: 3, editorRole: 'AUDIO_QUALITY_ANALYST', registeredAt: '2026-05-13T14:15:00Z', status: 'BUSY' },
-    { id: 4, trackId: 1, editorRole: 'SYNC_SPECIALIST', registeredAt: '2026-05-12T09:00:00Z', status: 'AVAILABLE' },
-    { id: 5, trackId: 4, editorRole: 'METADATA_REVIEWER', registeredAt: '2026-05-15T11:20:00Z', status: 'AVAILABLE' },
-    { id: 6, trackId: 5, editorRole: 'AUDIO_QUALITY_ANALYST', registeredAt: '2026-05-15T16:45:00Z', status: 'AVAILABLE' },
-    { id: 7, trackId: 2, editorRole: 'METADATA_REVIEWER', registeredAt: '2026-05-11T13:00:00Z', status: 'AVAILABLE' }
-  ],
-  serviceOrders: [
-    { id: 1, trackId: 1, issueId: 'ISSUE_001', neededAction: 'REPROCESS', priority: 'HIGH', registeredAt: '2026-05-15T08:30:00Z' },
-    { id: 2, trackId: 2, issueId: 'ISSUE_002', neededAction: 'REPLACE', priority: 'NORMAL', registeredAt: '2026-05-14T11:00:00Z' },
-    { id: 3, trackId: 3, issueId: 'ISSUE_003', neededAction: 'REPROCESS', priority: 'HIGH', registeredAt: '2026-05-13T15:30:00Z' },
-    { id: 4, trackId: 4, issueId: 'ISSUE_004', neededAction: 'REPLACE', priority: 'NORMAL', registeredAt: '2026-05-12T10:00:00Z' },
-    { id: 5, trackId: 5, issueId: 'ISSUE_005', neededAction: 'REPROCESS', priority: 'NORMAL', registeredAt: '2026-05-11T16:00:00Z' }
+  preservationItems: [
+    { id: 1, cellarId: 1, wineType: 'reds', wineId: 1, wineName: 'Eszencia 1999', quantity: 42, registeredAt: '2026-05-10T14:30:00.000Z' },
+    { id: 2, cellarId: 1, wineType: 'reds', wineId: 12, wineName: 'Vega Sicilia Único', quantity: 18, registeredAt: '2026-05-12T09:15:00.000Z' },
+    { id: 3, cellarId: 2, wineType: 'whites', wineId: 101, wineName: 'Cloudy Bay Sauvignon Blanc', quantity: 35, registeredAt: '2026-05-13T16:45:00.000Z' },
+    { id: 4, cellarId: 3, wineType: 'sparkling', wineId: 201, wineName: 'Moët & Chandon Impérial', quantity: 24, registeredAt: '2026-05-15T11:20:00.000Z' },
+    { id: 5, cellarId: 4, wineType: 'rose', wineId: 301, wineName: 'Domaine Ott Rosé', quantity: 15, registeredAt: '2026-05-16T08:00:00.000Z' },
+    { id: 6, cellarId: 5, wineType: 'dessert', wineId: 501, wineName: 'Château d\'Yquem 2015', quantity: 8, registeredAt: '2026-05-17T10:30:00.000Z' }
   ]
 };
 
@@ -34,13 +27,12 @@ const normalizeDbShape = (rawDb) => {
   const normalized = rawDb && typeof rawDb === 'object' ? { ...rawDb } : {};
 
   // Backward compatibility with older key names.
-  if (!Array.isArray(normalized.serviceOrders) && Array.isArray(normalized['service-orders'])) {
-    normalized.serviceOrders = normalized['service-orders'];
+  if (!Array.isArray(normalized.preservationItems) && Array.isArray(normalized['preservation-items'])) {
+    normalized.preservationItems = normalized['preservation-items'];
   }
 
-  if (!Array.isArray(normalized.tracks)) normalized.tracks = [];
-  if (!Array.isArray(normalized.editors)) normalized.editors = [];
-  if (!Array.isArray(normalized.serviceOrders)) normalized.serviceOrders = [];
+  if (!Array.isArray(normalized.cellars)) normalized.cellars = [];
+  if (!Array.isArray(normalized.preservationItems)) normalized.preservationItems = [];
 
   return normalized;
 };

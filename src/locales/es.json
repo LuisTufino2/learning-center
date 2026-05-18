@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "YouTube Music Editorial Platform",
+    "title": "The Wine Square Cellar Management Platform",
     "language": {
       "english": "EN",
       "spanish": "ES"
@@ -8,53 +8,45 @@
   },
   "navigation": {
     "home": "Inicio",
-    "newEditor": "Nuevo Editor"
+    "newPreservationItem": "Nuevo Preservation Item"
   },
   "home": {
     "title": "Inicio",
-    "welcome": "Bienvenido a YouTube Music",
-    "editorAnalytics": "Analítica de Editores",
-    "nextServiceOrder": "Siguiente Orden de Servicio"
+    "subtitle": "Productos de ingeniería para bodegas de vino.",
+    "myWineCellars": "Mis Bodegas",
+    "sectionDescription": "Consulta el inventario y la capacidad disponible de cada cellar."
   },
-  "editorRoleStats": {
-    "costPerHour": "Costo por Hora",
-    "accumulatedCost": "Costo Acumulado",
-    "activeEditors": "Editores Activos"
+  "cellar": {
+    "totalBottles": "Total de Botellas",
+    "availableCapacity": "Capacidad Disponible",
+    "empty": "Vacío"
   },
-  "editorRoles": {
-    "METADATA_REVIEWER": "Revisor de Metadatos",
-    "SYNC_SPECIALIST": "Especialista de Sincronización",
-    "AUDIO_QUALITY_ANALYST": "Analista de Calidad de Audio"
+  "wineTypes": {
+    "reds": "Tintos",
+    "whites": "Blancos",
+    "sparkling": "Espumosos",
+    "rose": "Rosé",
+    "dessert": "Dulces",
+    "port": "Porto"
   },
-  "serviceOrder": {
-    "id": "ID de Orden de Servicio",
-    "track": "Canción",
-    "issue": "ID de Incidencia",
-    "neededAction": "Acción Necesaria",
-    "priority": "Prioridad",
-    "registeredAt": "Registrado el",
-    "empty": "No hay órdenes de servicio de alta prioridad."
-  },
-  "neededActions": {
-    "REPROCESS": "Reprocesar",
-    "REPLACE": "Reemplazar"
-  },
-  "priorities": {
-    "HIGH": "Alta",
-    "NORMAL": "Normal"
-  },
-  "newEditor": {
-    "title": "Nuevo Editor",
-    "subtitle": "Agregar un Registro de Editor",
-    "track": "Canción",
-    "editorRole": "Rol del Editor",
-    "selectTrack": "Seleccione una canción",
-    "selectEditorRole": "Seleccione un rol de editor",
+  "newPreservationItem": {
+    "title": "Nuevo Preservation Item",
+    "subtitle": "Agrega botellas de vino a tu cellar",
+    "wineType": "Tipo de Vino",
+    "wine": "Vino",
+    "quantity": "Cantidad",
+    "cellar": "Cellar",
+    "selectWineType": "Seleccione un tipo de vino",
+    "selectWine": "Seleccione un vino",
     "create": "Crear",
     "cancel": "Cancelar",
-    "created": "Registro de editor creado correctamente.",
-    "duplicateToday": "Esta canción ya tiene un editor registrado hoy.",
-    "error": "No se pudo crear el registro de editor."
+    "created": "El registro se creó correctamente.",
+    "error": "No se pudo crear el registro.",
+    "loadError": "No fue posible cargar las bodegas.",
+    "winesLoadError": "No fue posible cargar los vinos.",
+    "capacityExceeded": "La cantidad excede la capacidad disponible de la cellar seleccionada.",
+    "invalidQuantity": "La cantidad debe ser mayor que cero.",
+    "cellarNotFound": "No se encontró una cellar para el tipo de vino seleccionado."
   },
   "validation": {
     "required": "Este campo es obligatorio."
@@ -65,9 +57,7 @@
     "goHome": "Volver a Inicio"
   },
   "common": {
-    "loading": "Cargando...",
-    "currency": "$",
-    "notAvailable": "No disponible"
+    "loading": "Cargando..."
   },
   "footer": {
     "poweredBy": "Impulsado por"

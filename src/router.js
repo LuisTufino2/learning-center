@@ -1,19 +1,26 @@
-import {createRouter, createWebHistory} from "vue-router";
-import editorialRoutes from "./editorial/presentation/editorial-routes.js";
+import { createRouter, createWebHistory } from 'vue-router';
+import i18n from './i18n.js';
 
-// Define lazy-loaded components for routes
-const pageNotFound = () => import('./shared/presentation/views/page-not-found.vue');
-
-/**
- * Application route definitions for YouTube Music Editorial Platform.
- * Includes editorial bounded context routes and catch-all routes.
- *
- * @type {import('vue-router').RouteRecordRaw[]}
- */
 const routes = [
-    ...editorialRoutes,
-    { path: '/',                        redirect: '/home' },
-    { path: '/:pathMatch(.*)*',         name: 'not-found',      component: pageNotFound, meta: { title: 'Page Not Found' } }
+  { path: '/', redirect: '/home' },
+  {
+    path: '/home',
+    name: 'home',
+    component: () => import('./shared/presentation/views/home.vue'),
+    meta: { titleKey: 'home.title' }
+  },
+  {
+    path: '/preservation/items/new',
+    name: 'new-preservation-item',
+    component: () => import('./shared/presentation/views/new-preservation-item.vue'),
+    meta: { titleKey: 'newPreservationItem.title' }
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('./shared/presentation/views/page-not-found.vue'),
+    meta: { titleKey: 'pageNotFound.title' }
+  }
 ];
 
 /**
@@ -23,8 +30,8 @@ const routes = [
  * @type {import('vue-router').Router}
  */
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes: routes,
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes
 });
 
 /**
@@ -36,11 +43,10 @@ const router = createRouter({
  * @returns {void}
  */
 router.beforeEach((to, from, next) => {
-    console.log(`Navigating from ${from.name} to ${to.name}`);
-    // Set the page title
-    let baseTitle = 'YouTube Music Editorial Platform';
-    document.title = `${baseTitle} - ${to.meta['title']}`;
-    return next();
+  const titleKey = to.meta.titleKey;
+  const pageTitle = titleKey ? i18n.global.t(titleKey) : '';
+  document.title = pageTitle ? `${i18n.global.t('app.title')} - ${pageTitle}` : i18n.global.t('app.title');
+  return next();
 });
 
 export default router;

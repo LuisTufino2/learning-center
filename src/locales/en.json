@@ -1,6 +1,6 @@
 {
   "app": {
-    "title": "YouTube Music Editorial Platform",
+    "title": "The Wine Square Cellar Management Platform",
     "language": {
       "english": "EN",
       "spanish": "ES"
@@ -8,53 +8,45 @@
   },
   "navigation": {
     "home": "Home",
-    "newEditor": "New Editor"
+    "newPreservationItem": "New Preservation Item"
   },
   "home": {
     "title": "Home",
-    "welcome": "Welcome to YouTube Music",
-    "editorAnalytics": "Editor Analytics",
-    "nextServiceOrder": "Next Service Order"
+    "subtitle": "Engineered Products for Wine Cellars.",
+    "myWineCellars": "My Wine Cellars",
+    "sectionDescription": "Track your cellar inventory and available capacity at a glance."
   },
-  "editorRoleStats": {
-    "costPerHour": "Cost Per Hour",
-    "accumulatedCost": "Accumulated Cost",
-    "activeEditors": "Active Editors"
+  "cellar": {
+    "totalBottles": "Total Bottles",
+    "availableCapacity": "Available Capacity",
+    "empty": "Empty"
   },
-  "editorRoles": {
-    "METADATA_REVIEWER": "Metadata Reviewer",
-    "SYNC_SPECIALIST": "Sync Specialist",
-    "AUDIO_QUALITY_ANALYST": "Audio Quality Analyst"
+  "wineTypes": {
+    "reds": "Reds",
+    "whites": "Whites",
+    "sparkling": "Sparkling",
+    "rose": "Rosé",
+    "dessert": "Dessert",
+    "port": "Port"
   },
-  "serviceOrder": {
-    "id": "Service Order ID",
-    "track": "Track",
-    "issue": "Issue ID",
-    "neededAction": "Needed Action",
-    "priority": "Priority",
-    "registeredAt": "Registered At",
-    "empty": "There are no high priority service orders."
-  },
-  "neededActions": {
-    "REPROCESS": "Reprocess",
-    "REPLACE": "Replace"
-  },
-  "priorities": {
-    "HIGH": "High",
-    "NORMAL": "Normal"
-  },
-  "newEditor": {
-    "title": "New Editor",
-    "subtitle": "Add an Editor Record",
-    "track": "Track",
-    "editorRole": "Editor Role",
-    "selectTrack": "Select a track",
-    "selectEditorRole": "Select an editor role",
+  "newPreservationItem": {
+    "title": "New Preservation Item",
+    "subtitle": "Add Wine Bottles to Your Cellar",
+    "wineType": "Wine Type",
+    "wine": "Wine",
+    "quantity": "Quantity",
+    "cellar": "Cellar",
+    "selectWineType": "Select a wine type",
+    "selectWine": "Select a wine",
     "create": "Create",
     "cancel": "Cancel",
-    "created": "Editor record created successfully.",
-    "duplicateToday": "This track already has an editor registered today.",
-    "error": "The editor record could not be created."
+    "created": "Preservation item created successfully.",
+    "error": "The preservation item could not be created.",
+    "loadError": "Unable to load cellars.",
+    "winesLoadError": "Unable to load wines.",
+    "capacityExceeded": "Quantity exceeds the available capacity for the selected cellar.",
+    "invalidQuantity": "Quantity must be greater than zero.",
+    "cellarNotFound": "No cellar was found for the selected wine type."
   },
   "validation": {
     "required": "This field is required."
@@ -65,9 +57,7 @@
     "goHome": "Return to Home"
   },
   "common": {
-    "loading": "Loading...",
-    "currency": "$",
-    "notAvailable": "Not available"
+    "loading": "Loading..."
   },
   "footer": {
     "poweredBy": "Powered by"

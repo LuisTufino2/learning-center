@@ -1,43 +1,41 @@
 <script setup>
+import { computed, watch } from 'vue';
+import { useI18n } from 'vue-i18n';
+import { useRoute, useRouter } from 'vue-router';
+import LanguageSwitcher from './language-switcher.vue';
+import FooterContent from './footer-content.vue';
 
-import LanguageSwitcher from "./language-switcher.vue";
-import {ref, computed} from "vue";
-import {useI18n} from "vue-i18n";
-import {useRouter} from "vue-router";
-import FooterContent from "./footer-content.vue";
-
-const { t } = useI18n();
+const { t, locale } = useI18n();
 const router = useRouter();
-
-const drawer = ref(false);
-const logoUrl = '/Youtube_Music_icon.svg';
-
-const toggleDrawer = () => {
-  /**
-   * Toggles the state of the drawer between open and closed.
-   */
-  drawer.value = !drawer.value;
-}
+const route = useRoute();
+const logoUrl = 'https://img.logo.dev/thewinesquare.com?size=64';
 
 const navigationItems = computed(() => [
-  {label: t('navigation.home'), to: '/home'},
-  {label: t('navigation.newEditor'), to: '/support/editors/new'}
+  { label: t('navigation.home'), to: '/home' },
+  { label: t('navigation.newPreservationItem'), to: '/preservation/items/new' }
 ]);
 
 const navigateTo = (path) => {
   router.push(path);
-  drawer.value = false;
 };
+
+const updateDocumentTitle = () => {
+  const titleKey = route.meta?.titleKey;
+  const pageTitle = titleKey ? t(titleKey) : '';
+  document.title = pageTitle ? `${t('app.title')} - ${pageTitle}` : t('app.title');
+};
+
+watch([() => route.fullPath, locale], updateDocumentTitle, { immediate: true });
 </script>
 
 <template>
   <pv-toast/>
   <pv-confirm-dialog/>
   <div class="header">
-    <pv-toolbar class="youtube-toolbar">
+    <pv-toolbar class="wine-toolbar">
       <template #start>
         <div class="toolbar-start">
-          <img :src="logoUrl" alt="YouTube Music" class="logo" />
+          <img :src="logoUrl" alt="The Wine Square logo" class="logo" />
           <h2 class="app-title">{{ t('app.title') }}</h2>
         </div>
       </template>
@@ -64,7 +62,7 @@ const navigateTo = (path) => {
     <router-view/>
   </div>
   <div class="footer">
-    <footer-content/>
+    <footer-content />
   </div>
 </template>
 
@@ -76,8 +74,8 @@ const navigateTo = (path) => {
   width: 100%;
 }
 
-.youtube-toolbar {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+.wine-toolbar {
+  background: linear-gradient(135deg, #4b1f16 0%, #7c2d12 100%);
   padding: 0 24px;
   display: flex;
   align-items: center;
@@ -133,7 +131,7 @@ const navigateTo = (path) => {
 }
 
 .nav-button[aria-current="page"] {
-  background-color: #4f46e5;
+  background-color: rgba(255, 255, 255, 0.16);
   color: #ffffff;
 }
 
@@ -151,12 +149,9 @@ const navigateTo = (path) => {
 }
 
 .footer {
-  position: relative;
-  bottom: 0;
-  left: 0;
   width: 100%;
   padding: 20px;
-  background-color: #1f2937;
+  background-color: #4b1f16;
   color: #e5e7eb;
   text-align: center;
   margin-top: 40px;
@@ -175,9 +170,6 @@ const navigateTo = (path) => {
 }
 
 @media (max-width: 768px) {
-  .app-title {
-    display: none;
-  }
 
   .toolbar-center {
     margin: 0 10px;

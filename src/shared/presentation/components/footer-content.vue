@@ -7,18 +7,18 @@
   <footer class="footer-content">
     <div class="footer-container">
       <p class="copyright">
-        &copy; 2026 YouTube Music Editorial Platform. All rights reserved.
+        &copy; 2026 The Wine Square. All rights reserved.
       </p>
       <p class="powered-by">
         {{ t('footer.poweredBy') }}
         <a
-            href="https://music.youtube.com/"
+            href="https://www.thewinesquare.com/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open YouTube Music website"
+            aria-label="Open The Wine Square website"
             class="footer-link"
         >
-          YouTube Music
+          The Wine Square
         </a>
       </p>
     </div>
@@ -27,7 +27,7 @@
 
 <style scoped>
 .footer-content {
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+  background: linear-gradient(135deg, #4b1f16 0%, #2f120c 100%);
   color: #e5e7eb;
   padding: 20px;
   text-align: center;
@@ -49,19 +49,19 @@
 }
 
 .footer-link {
-  color: #4f46e5;
+  color: #f59e0b;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s ease;
 }
 
 .footer-link:hover {
-  color: #6366f1;
+  color: #fbbf24;
   text-decoration: underline;
 }
 
 .footer-link:focus {
-  outline: 2px solid #4f46e5;
+  outline: 2px solid #f59e0b;
   outline-offset: 2px;
 }
 </style>
