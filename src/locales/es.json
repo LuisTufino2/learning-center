@@ -1,0 +1,75 @@
+{
+  "app": {
+    "title": "YouTube Music Editorial Platform",
+    "language": {
+      "english": "EN",
+      "spanish": "ES"
+    }
+  },
+  "navigation": {
+    "home": "Inicio",
+    "newEditor": "Nuevo Editor"
+  },
+  "home": {
+    "title": "Inicio",
+    "welcome": "Bienvenido a YouTube Music",
+    "editorAnalytics": "Analítica de Editores",
+    "nextServiceOrder": "Siguiente Orden de Servicio"
+  },
+  "editorRoleStats": {
+    "costPerHour": "Costo por Hora",
+    "accumulatedCost": "Costo Acumulado",
+    "activeEditors": "Editores Activos"
+  },
+  "editorRoles": {
+    "METADATA_REVIEWER": "Revisor de Metadatos",
+    "SYNC_SPECIALIST": "Especialista de Sincronización",
+    "AUDIO_QUALITY_ANALYST": "Analista de Calidad de Audio"
+  },
+  "serviceOrder": {
+    "id": "ID de Orden de Servicio",
+    "track": "Canción",
+    "issue": "ID de Incidencia",
+    "neededAction": "Acción Necesaria",
+    "priority": "Prioridad",
+    "registeredAt": "Registrado el",
+    "empty": "No hay órdenes de servicio de alta prioridad."
+  },
+  "neededActions": {
+    "REPROCESS": "Reprocesar",
+    "REPLACE": "Reemplazar"
+  },
+  "priorities": {
+    "HIGH": "Alta",
+    "NORMAL": "Normal"
+  },
+  "newEditor": {
+    "title": "Nuevo Editor",
+    "subtitle": "Agregar un Registro de Editor",
+    "track": "Canción",
+    "editorRole": "Rol del Editor",
+    "selectTrack": "Seleccione una canción",
+    "selectEditorRole": "Seleccione un rol de editor",
+    "create": "Crear",
+    "cancel": "Cancelar",
+    "created": "Registro de editor creado correctamente.",
+    "duplicateToday": "Esta canción ya tiene un editor registrado hoy.",
+    "error": "No se pudo crear el registro de editor."
+  },
+  "validation": {
+    "required": "Este campo es obligatorio."
+  },
+  "pageNotFound": {
+    "title": "Página No Encontrada",
+    "message": "No se encontró la ruta solicitada:",
+    "goHome": "Volver a Inicio"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "currency": "$",
+    "notAvailable": "No disponible"
+  },
+  "footer": {
+    "poweredBy": "Impulsado por"
+  }
+}

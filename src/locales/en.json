@@ -1,0 +1,75 @@
+{
+  "app": {
+    "title": "YouTube Music Editorial Platform",
+    "language": {
+      "english": "EN",
+      "spanish": "ES"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "newEditor": "New Editor"
+  },
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome to YouTube Music",
+    "editorAnalytics": "Editor Analytics",
+    "nextServiceOrder": "Next Service Order"
+  },
+  "editorRoleStats": {
+    "costPerHour": "Cost Per Hour",
+    "accumulatedCost": "Accumulated Cost",
+    "activeEditors": "Active Editors"
+  },
+  "editorRoles": {
+    "METADATA_REVIEWER": "Metadata Reviewer",
+    "SYNC_SPECIALIST": "Sync Specialist",
+    "AUDIO_QUALITY_ANALYST": "Audio Quality Analyst"
+  },
+  "serviceOrder": {
+    "id": "Service Order ID",
+    "track": "Track",
+    "issue": "Issue ID",
+    "neededAction": "Needed Action",
+    "priority": "Priority",
+    "registeredAt": "Registered At",
+    "empty": "There are no high priority service orders."
+  },
+  "neededActions": {
+    "REPROCESS": "Reprocess",
+    "REPLACE": "Replace"
+  },
+  "priorities": {
+    "HIGH": "High",
+    "NORMAL": "Normal"
+  },
+  "newEditor": {
+    "title": "New Editor",
+    "subtitle": "Add an Editor Record",
+    "track": "Track",
+    "editorRole": "Editor Role",
+    "selectTrack": "Select a track",
+    "selectEditorRole": "Select an editor role",
+    "create": "Create",
+    "cancel": "Cancel",
+    "created": "Editor record created successfully.",
+    "duplicateToday": "This track already has an editor registered today.",
+    "error": "The editor record could not be created."
+  },
+  "validation": {
+    "required": "This field is required."
+  },
+  "pageNotFound": {
+    "title": "Page Not Found",
+    "message": "The requested route was not found:",
+    "goHome": "Return to Home"
+  },
+  "common": {
+    "loading": "Loading...",
+    "currency": "$",
+    "notAvailable": "Not available"
+  },
+  "footer": {
+    "poweredBy": "Powered by"
+  }
+}
